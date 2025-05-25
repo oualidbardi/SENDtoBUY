@@ -1,238 +1,272 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SENDtoBUY - Dropshipping Store</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pZxRePiq3qEyLhEzWnWq35kvN1EF9Oco3Bv9j+ZC0BxjQwZY30aKCNhG51y+1QzRmyt9DjsyJ12C6SuF6U9LAA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
   <style>
-    /* Reset */
+    /* Reset & base */
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9fafb;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f9fbfd;
+      color: #222;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
+    /* Header */
     header {
-      background: #1E88E5;
+      background: #1565c0;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(30, 136, 229, 0.3);
+      padding: 1.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 3px 8px rgba(21, 101, 192, 0.3);
+    }
+    header img.logo {
+      height: 50px;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
     }
 
+    /* Navigation */
     nav {
-      background: #1565C0;
+      background: #1e88e5;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 0.7rem 1rem;
+      box-shadow: 0 2px 6px rgba(30, 136, 229, 0.5);
     }
-
     nav a {
       color: white;
-      text-decoration: none;
       font-weight: 600;
-      padding: 0.3rem 0.7rem;
+      font-size: 1rem;
+      padding: 0.3rem 0.5rem;
       border-radius: 4px;
-      transition: background 0.3s;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #0d47a1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    nav a:hover,
-    nav a.active {
-      background: #FDD835;
-      color: #1565C0;
-    }
-
+    /* Main content */
     main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      flex-grow: 1;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     section {
       margin-bottom: 3rem;
     }
-
-    h2 {
+    section h2 {
+      font-weight: 700;
       margin-bottom: 1rem;
-      color: #1565C0;
+      border-bottom: 3px solid #1e88e5;
+      display: inline-block;
+      padding-bottom: 0.25rem;
     }
-
-    /* Products */
+    
+    /* Products Grid */
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
-
-    .product-card {
+    .product {
       background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      transition: box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s ease;
+      justify-content: space-between;
     }
-
-    .product-card:hover {
-      transform: translateY(-5px);
+    .product:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
-
-    .product-image {
-      width: 100%;
-      max-width: 150px;
+    .product h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      color: #1565c0;
+    }
+    .product p {
+      flex-grow: 1;
       margin-bottom: 1rem;
+      color: #444;
     }
-
-    .product-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-
-    .product-desc {
-      font-size: 0.9rem;
-      margin-bottom: 0.7rem;
-      text-align: center;
-      color: #555;
-    }
-
-    .product-price {
-      font-weight: 700;
+    .product strong {
+      font-size: 1.2rem;
+      color: #0d47a1;
       margin-bottom: 1rem;
-      color: #1E88E5;
+      display: block;
     }
-
     .btn-buy {
-      background: #1E88E5;
+      background-color: #1e88e5;
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+      padding: 0.7rem;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      user-select: none;
     }
-
     .btn-buy:hover {
-      background: #1565C0;
+      background-color: #0d47a1;
+      transform: scale(1.05);
     }
 
-    /* Contact form */
+    /* Forms */
     form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      max-width: 400px;
+      margin-top: 1rem;
     }
-
-    input, textarea {
-      padding: 0.7rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+    form input, form textarea {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      margin: 0.6rem 0;
+      border-radius: 6px;
+      border: 1.8px solid #ccc;
       font-size: 1rem;
-      resize: vertical;
+      transition: border-color 0.3s ease;
+      font-family: 'Poppins', sans-serif;
     }
-
-    button[type="submit"] {
-      background: #1E88E5;
+    form input:focus, form textarea:focus {
+      border-color: #1e88e5;
+      outline: none;
+      box-shadow: 0 0 6px #1e88e5aa;
+    }
+    form button {
+      background-color: #1e88e5;
       color: white;
       border: none;
-      padding: 0.7rem;
-      border-radius: 5px;
-      font-weight: 700;
+      padding: 0.8rem 1.4rem;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      width: 100%;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    form button:hover {
+      background-color: #0d47a1;
+      transform: scale(1.05);
     }
 
-    button[type="submit"]:hover {
-      background: #1565C0;
+    /* Footer */
+    footer {
+      background: #1565c0;
+      color: white;
+      text-align: center;
+      padding: 1.2rem 1rem;
+      font-weight: 600;
+      box-shadow: 0 -3px 8px rgba(21, 101, 192, 0.3);
+      margin-top: auto;
     }
 
-    /* Login form */
-    #login form {
-      max-width: 350px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    /* Responsive */
+    /* Responsive tweaks */
     @media (max-width: 600px) {
       nav {
-        flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
       }
-      main {
-        margin: 1rem;
-        padding: 0;
+      .products {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
   <header>
+    <!-- Replace 'your-logo-url.png' with your actual logo URL or upload your logo file -->
+    <img class="logo" src="https://via.placeholder.com/150x50?text=SENDtoBUY" alt="SENDtoBUY Logo" />
     <h1>SENDtoBUY</h1>
-    <p>Your One-Stop Dropshipping Store</p>
   </header>
 
   <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-    <a href="#login">Login</a>
+    <a href="#home"><i class="fas fa-house"></i> Home</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#products"><i class="fas fa-box-open"></i> Products</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="#login"><i class="fas fa-user"></i> Login</a>
   </nav>
 
   <main>
     <section id="home">
       <h2>Welcome to SENDtoBUY</h2>
-      <p>We connect you with trending products shipped directly to your doorstep. Fast, reliable, and hassle-free!</p>
+      <p>Your one-stop dropshipping store with trending products shipped directly to your doorstep. Fast, reliable, and hassle-free shopping experience!</p>
     </section>
 
     <section id="about">
       <h2>About Us</h2>
-      <p>SENDtoBUY is a modern dropshipping platform that helps customers discover and buy top-quality products with ease. Our mission is to simplify online shopping by handling all logistics and support for our partners and customers.</p>
+      <p>
+        SENDtoBUY is a modern dropshipping platform dedicated to bringing you top-quality products with ease and trust. We handle all logistics and customer support to make your shopping effortless.
+      </p>
     </section>
 
     <section id="products">
       <h2>Products</h2>
       <div class="products">
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1580906859207-94d9a8fa7990?auto=format&fit=crop&w=150&q=80" alt="Wireless Earbuds" class="product-image" />
-          <div class="product-title">Wireless Earbuds</div>
-          <div class="product-desc">High-quality sound, long battery life, and noise cancellation.</div>
-          <div class="product-price">$29.99</div>
-          <button class="btn-buy">Buy Now</button>
+        <div class="product">
+          <h3>Wireless Earbuds</h3>
+          <p>High-quality sound, long battery life, and noise cancellation.</p>
+          <strong>$29.99</strong>
+          <button class="btn-buy"><i class="fas fa-cart-plus"></i> Add to Cart</button>
         </div>
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=150&q=80" alt="Smartwatch" class="product-image" />
-          <div class="product-title">Smartwatch</div>
-          <div class="product-desc">Track your fitness, monitor heart rate, and receive notifications.</div>
-          <div class="product-price">$49.99</div>
-          <button class="btn-buy">Buy Now</button>
+        <div class="product">
+          <h3>Smartwatch</h3>
+          <p>Track your fitness, monitor heart rate, and receive notifications.</p>
+          <strong>$49.99</strong>
+          <button class="btn-buy"><i class="fas fa-cart-plus"></i> Add to Cart</button>
         </div>
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09e5f?auto=format&fit=crop&w=150&q=80" alt="Portable Blender" class="product-image" />
-          <div class="product-title">Portable Blender</div>
-          <div class="product-desc">Blend your favorite smoothies on the go. USB rechargeable.</div>
-          <div class="product-price">$24.99</div>
-          <button class="btn-buy">Buy Now</button>
+        <div class="product">
+          <h3>Portable Blender</h3>
+          <p>Blend your favorite smoothies on the go. USB rechargeable.</p>
+          <strong>$24.99</strong>
+          <button class="btn-buy"><i class="fas fa-cart-plus"></i> Add to Cart</button>
         </div>
       </div>
     </section>
@@ -260,41 +294,5 @@
   <footer>
     <p>&copy; 2025 SENDtoBUY. All rights reserved.</p>
   </footer>
-
-  <script>
-    // Highlight nav links on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 60;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Smooth scroll behavior for nav links
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
 </body>
 </html>
-
-
-
-
