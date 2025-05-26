@@ -1,11 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Products – SENDtoBUY</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .products-page {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 20px;
+    }
+    .product-info h3 {
+      margin: 0 0 10px;
+    }
+    .product-info p {
+      margin: 0 0 15px;
+      color: #555;
+      font-size: 14px;
+    }
+    .product-price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #0055ff;
+    }
+    header, nav, footer {
+      background-color: #0055ff;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <header><h1>Our Products</h1></header>
+  <header>
+    <h1>Our Top Products</h1>
+  </header>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -13,23 +72,61 @@
     <a href="contact.html">Contact/Login</a>
   </nav>
 
-  <section>
+  <div class="products-page">
     <div class="products-grid">
       <div class="product-card">
-        <h3>Smart Watch</h3>
-        <p>$49.99</p>
+        <img src="https://via.placeholder.com/300x220?text=Smart+Watch" alt="Smart Watch">
+        <div class="product-info">
+          <h3>Smart Watch Series X</h3>
+          <p>Track your fitness, monitor your heart rate, and stay connected. Built with premium materials and long battery life.</p>
+          <div class="product-price">$149.99</div>
+        </div>
       </div>
       <div class="product-card">
-        <h3>Bluetooth Earbuds</h3>
-        <p>$29.99</p>
+        <img src="https://via.placeholder.com/300x220?text=Wireless+Earbuds" alt="Wireless Earbuds">
+        <div class="product-info">
+          <h3>Noise Cancelling Earbuds</h3>
+          <p>Enjoy crisp sound with noise isolation, water resistance, and 24-hour battery life in a stylish compact case.</p>
+          <div class="product-price">$89.99</div>
+        </div>
       </div>
       <div class="product-card">
-        <h3>Portable Speaker</h3>
-        <p>$39.99</p>
+        <img src="https://via.placeholder.com/300x220?text=Bluetooth+Speaker" alt="Bluetooth Speaker">
+        <div class="product-info">
+          <h3>Portable Bluetooth Speaker</h3>
+          <p>Bring the party anywhere with 360° sound, waterproof design, and LED lighting effects. Perfect for indoors and outdoors.</p>
+          <div class="product-price">$59.99</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x220?text=Gaming+Keyboard" alt="Gaming Keyboard">
+        <div class="product-info">
+          <h3>RGB Mechanical Keyboard</h3>
+          <p>Ergonomic layout, clicky mechanical keys, full RGB lighting, and anti-ghosting make this the ultimate tool for gamers.</p>
+          <div class="product-price">$99.99</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x220?text=HD+Webcam" alt="Webcam">
+        <div class="product-info">
+          <h3>4K USB Webcam</h3>
+          <p>Crystal clear video for remote work and streaming. Autofocus, built-in microphone, and plug-and-play support.</p>
+          <div class="product-price">$69.99</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x220?text=Wireless+Charger" alt="Wireless Charger">
+        <div class="product-info">
+          <h3>Fast Wireless Charging Pad</h3>
+          <p>Slim and fast 15W charging for iPhone and Android. Non-slip pad and smart LED indicator included.</p>
+          <div class="product-price">$29.99</div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <footer>© 2025 SENDtoBUY. All rights reserved.</footer>
+  <footer>
+    &copy; 2025 SENDtoBUY. All rights reserved.
+  </footer>
 </body>
 </html>
